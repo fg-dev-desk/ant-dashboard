@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Card, Select, Row, Col } from 'antd';
-import { CalendarOutlined } from '@ant-design/icons';
+import { CalendarOutlined, BarChartOutlined } from '@ant-design/icons';
 import BarChart from '../components/BarChart';
 
 const { Option } = Select;
@@ -63,19 +63,27 @@ const OptionPage = ({ optionNumber }) => {
           <div style={{
             background: 'linear-gradient(195deg, #42424a, #191919)',
             margin: '-24px -24px 24px -24px',
-            padding: '24px',
-            borderRadius: '12px',
-            color: 'white'
+            padding: '40px 24px',
+            borderRadius: '12px 12px 0 0',
+            color: 'white',
+            overflow: 'hidden',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
           }}>
-            <h6 style={{ margin: 0, fontSize: '18px', fontWeight: '600', color: 'white' }}>
-              {currentOption.title}
-            </h6>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <BarChartOutlined style={{ fontSize: '24px', color: 'white' }} />
+              <h6 style={{ margin: 0, fontSize: '22px', fontWeight: '600', color: 'white' }}>
+                {currentOption.title}
+              </h6>
+            </div>
           </div>
         }
         style={{ 
           borderRadius: '12px',
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.07)',
-          border: 'none'
+          border: 'none',
+          overflow: 'hidden'
         }}
         headStyle={{
           border: 'none',
@@ -91,20 +99,9 @@ const OptionPage = ({ optionNumber }) => {
               title={
                 <div style={{ 
                   display: 'flex', 
-                  justifyContent: 'space-between', 
-                  alignItems: 'center',
-                  flexWrap: 'wrap',
-                  gap: '16px'
+                  justifyContent: 'flex-end', 
+                  alignItems: 'center'
                 }}>
-                  <div>
-                    <h6 style={{ margin: 0, fontSize: '16px', fontWeight: '600', color: '#344767' }}>
-                      Gráfico Mensual
-                    </h6>
-                    <p style={{ margin: '4px 0 0', fontSize: '14px', color: '#67748e' }}>
-                      <CalendarOutlined style={{ color: '#17c1e8', marginRight: '4px' }} />
-                      <span style={{ fontWeight: '600' }}>Vista por semanas</span>
-                    </p>
-                  </div>
                   <Select
                     value={selectedMonth}
                     onChange={setSelectedMonth}
