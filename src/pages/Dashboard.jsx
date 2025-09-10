@@ -1,4 +1,5 @@
 import { Row, Col, Card } from 'antd';
+import { DashboardOutlined } from '@ant-design/icons';
 import BarChart from '../components/BarChart';
 
 const Dashboard = () => {
@@ -8,32 +9,32 @@ const Dashboard = () => {
 
   const chartData = [
     {
-      title: 'Opción 1 - Vista Semanal',
+      title: 'Análisis de Ventas',
       values: [65, 78, 82, 55, 90, 45, 88],
       color: 'primary'
     },
     {
-      title: 'Opción 2 - Vista Semanal', 
+      title: 'Gestión de Inventario', 
       values: [45, 62, 75, 88, 72, 95, 68],
       color: 'success'
     },
     {
-      title: 'Opción 3 - Vista Semanal',
+      title: 'Análisis de Clientes',
       values: [78, 85, 92, 67, 84, 76, 89],
       color: 'info'
     },
     {
-      title: 'Opción 4 - Vista Semanal',
+      title: 'Control Financiero',
       values: [56, 73, 68, 91, 77, 83, 65],
       color: 'warning'
     },
     {
-      title: 'Opción 5 - Vista Semanal',
+      title: 'Productividad Operativa',
       values: [82, 69, 77, 85, 74, 92, 81],
       color: 'danger'
     },
     {
-      title: 'Opción 6 - Vista Semanal',
+      title: 'Marketing Digital',
       values: [71, 88, 79, 94, 66, 87, 75],
       color: 'dark'
     },
@@ -41,7 +42,42 @@ const Dashboard = () => {
 
   return (
     <div style={{ background: 'transparent', padding: '0' }}>
-      <Row gutter={[24, 24]}>
+      <Card 
+        title={
+          <div style={{
+            background: 'linear-gradient(195deg, #42424a, #191919)',
+            margin: '-24px -24px 24px -24px',
+            padding: '40px 24px',
+            borderRadius: '12px 12px 0 0',
+            color: 'white',
+            overflow: 'hidden',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <DashboardOutlined style={{ fontSize: '24px', color: 'white' }} />
+              <h6 style={{ margin: 0, fontSize: '22px', fontWeight: '600', color: 'white' }}>
+                Dashboard - Vista General
+              </h6>
+            </div>
+          </div>
+        }
+        style={{ 
+          borderRadius: '12px',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.07)',
+          border: 'none',
+          overflow: 'hidden'
+        }}
+        headStyle={{
+          border: 'none',
+          padding: '0'
+        }}
+        bodyStyle={{
+          paddingTop: '0'
+        }}
+      >
+        <Row gutter={[24, 24]}>
         {chartData.map((data, index) => (
           <Col key={index} xs={24} lg={12}>
             <Card 
@@ -82,7 +118,8 @@ const Dashboard = () => {
             </Card>
           </Col>
         ))}
-      </Row>
+        </Row>
+      </Card>
     </div>
   );
 };

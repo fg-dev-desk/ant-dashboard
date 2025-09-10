@@ -27,32 +27,32 @@ const Sidebar = ({ isAuthenticated, onSignOut, isMobile, isOpen, onClose }) => {
     {
       key: '/opcion1', 
       icon: <ShopOutlined />,
-      label: 'Opción 1',
+      label: 'Análisis de Ventas',
     },
     {
       key: '/opcion2',
       icon: <AppstoreOutlined />,
-      label: 'Opción 2', 
+      label: 'Gestión de Inventario', 
     },
     {
       key: '/opcion3',
       icon: <TeamOutlined />,
-      label: 'Opción 3',
+      label: 'Análisis de Clientes',
     },
     {
       key: '/opcion4',
       icon: <BankOutlined />,
-      label: 'Opción 4',
+      label: 'Control Financiero',
     },
     {
       key: '/opcion5',
       icon: <SettingOutlined />,
-      label: 'Opción 5',
+      label: 'Productividad Operativa',
     },
     {
       key: '/opcion6',
       icon: <SoundOutlined />,
-      label: 'Opción 6',
+      label: 'Marketing Digital',
     }
   ];
 

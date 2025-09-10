@@ -31,6 +31,7 @@ const BarChart = ({ data, title, height = 300, type = "monthly", color = "primar
     columnStyle: {
       radius: [4, 4, 0, 0],
     },
+    legend: false,
     meta: {
       value: {
         alias: 'Valor',
