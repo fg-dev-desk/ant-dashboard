@@ -1,6 +1,8 @@
 import { Column } from '@ant-design/plots';
 
 const BarChart = ({ data, title, height = 300, type = "monthly", color = "primary" }) => {
+  console.log('BarChart color prop:', color);
+  
   const colorPalette = {
     primary: '#e91e63',
     success: '#4caf50', 
@@ -11,6 +13,7 @@ const BarChart = ({ data, title, height = 300, type = "monthly", color = "primar
   };
 
   const selectedColor = colorPalette[color] || colorPalette.primary;
+  console.log('Selected color:', selectedColor);
 
   const chartData = data.labels.map((label, index) => ({
     category: label,
@@ -21,16 +24,15 @@ const BarChart = ({ data, title, height = 300, type = "monthly", color = "primar
     data: chartData,
     xField: 'category',
     yField: 'value',
+    colorField: 'category',
     height: height,
-    color: selectedColor,
+    scale: {
+      color: {
+        range: [selectedColor]
+      }
+    },
     columnStyle: {
       radius: [4, 4, 0, 0],
-      fill: selectedColor,
-    },
-    onReady: (plot) => {
-      if (plot?.chart?.geometries?.[0]) {
-        plot.chart.geometries[0].color(selectedColor);
-      }
     },
     meta: {
       value: {
