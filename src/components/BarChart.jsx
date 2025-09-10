@@ -27,6 +27,11 @@ const BarChart = ({ data, title, height = 300, type = "monthly", color = "primar
       radius: [4, 4, 0, 0],
       fill: selectedColor,
     },
+    onReady: (plot) => {
+      if (plot?.chart?.geometries?.[0]) {
+        plot.chart.geometries[0].color(selectedColor);
+      }
+    },
     meta: {
       value: {
         alias: 'Valor',

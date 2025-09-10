@@ -64,7 +64,7 @@ const OptionPage = ({ optionNumber }) => {
             background: 'linear-gradient(195deg, #42424a, #191919)',
             margin: '-24px -24px 24px -24px',
             padding: '24px',
-            borderRadius: '12px 12px 0 0',
+            borderRadius: '12px',
             color: 'white'
           }}>
             <h6 style={{ margin: 0, fontSize: '18px', fontWeight: '600', color: 'white' }}>
